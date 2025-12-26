@@ -70,3 +70,18 @@ def matches(
 
     scored.sort(key=lambda x: x["score"], reverse=True)
     return scored[:limit]
+
+@router.get("", response_model=list[ProfileOut])
+def list_profiles(db: Session = Depends(get_db)):
+    profiles = db.query(Profile).order_by(Profile.id.desc()).all()
+    return [
+        ProfileOut(
+            id=p.id,
+            name=p.name,
+            role_focus=p.role_focus,
+            english_level=p.english_level,
+            keywords=_split_csv(p.keywords),
+            exclude_keywords=_split_csv(p.exclude_keywords),
+        )
+        for p in profiles
+    ]

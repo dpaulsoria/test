@@ -1,0 +1,69 @@
+# -------------------------
+# Python / Virtualenv
+# -------------------------
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.coverage
+coverage.xml
+htmlcov/
+*.log
+
+# -------------------------
+# FastAPI / Uvicorn
+# -------------------------
+*.pid
+
+# -------------------------
+# Env files / secrets
+# -------------------------
+.env
+.env.*
+!.env.example
+
+# -------------------------
+# Database / local data
+# -------------------------
+*.sqlite3
+*.db
+
+# Docker compose overrides
+docker-compose.override.yml
+
+# -------------------------
+# IDEs / Editors
+# -------------------------
+.vscode/
+.idea/
+*.iml
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+# Node (si en algún momento agregas frontend build)
+# -------------------------
+node_modules/
+dist/
+build/
+
+# -------------------------
+# Logs / temp
+# -------------------------
+*.tmp
+*.temp
+tmp/
+temp/

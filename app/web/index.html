@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>RemoteJob Radar</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>RemoteJob Radar</h1>
+      <p class="muted">Ingest jobs, create profiles, and see matches.</p>
+      <div class="row gap">
+        <button id="btnIngest">Run /ingest</button>
+        <button id="btnReload">Reload jobs</button>
+        <span id="status" class="muted"></span>
+      </div>
+    </header>
+
+    <main class="container grid">
+      <section class="card">
+        <h2>Create profile</h2>
+
+        <div class="form">
+          <label>
+            Name
+            <input id="pName" placeholder="Your name" />
+          </label>
+
+          <label>
+            Role focus
+            <input id="pRole" placeholder="Your Role" />
+          </label>
+
+          <label>
+            English level
+            <input id="pEng" placeholder="A1/A2/B1/B2/C1/C2"/>
+          </label>
+
+          <label>
+            Keywords (comma separated)
+            <input id="pKeywords" placeholder="python, fastapi, postgres, aws, kotlin, laravel" />
+          </label>
+
+          <label>
+            Exclude (comma separated)
+            <input id="pExclude" placeholder="frontend, react, onsite, relocation, norwegian" />
+          </label>
+
+          <button id="btnCreateProfile">Create profile</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Profiles</h2>
+
+        <div class="row gap">
+          <select id="profilesSelect"></select>
+          <button id="btnLoadMatches">Load matches</button>
+        </div>
+
+        <div id="matches" class="list"></div>
+      </section>
+
+      <section class="card full">
+        <h2>Jobs</h2>
+        <div class="row gap">
+          <input id="q" placeholder="Search in title..." />
+          <button id="btnSearch">Search</button>
+        </div>
+        <div id="jobs" class="list"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
